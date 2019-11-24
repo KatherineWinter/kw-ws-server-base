@@ -8,6 +8,9 @@ function socketMessage(options = {}) {
 
   switch (messageObj.event) {
     case 'init': {
+      socket.send(JSON.stringify({
+        event: 'init_complete'
+      }))
       break
     }
 
